@@ -43,7 +43,6 @@ df['Nedbør'] = pd.to_numeric(df['Nedbør'], errors='coerce')
 
 
 df['Average'] = df['Nedbør'].rolling(window=12).mean()
-
 plt.figure(figsize=(8,5))
 plt.plot(df['Tid'], df['Nedbør'], 'r.-', label='Nedbør over tid')
 plt.plot(df['Tid'], df['Average'], 'b.-', label='Average Nedbør over tid')  # Plot the average
@@ -51,6 +50,7 @@ plt.plot(df['Tid'], df['Average'], 'b.-', label='Average Nedbør over tid')  # P
 # Labels
 plt.xlabel('Tid')
 plt.ylabel('Nedbør')
+plt.xticks(rotation=45)
 
 print(df['Tid'].unique())
 plt.legend()
