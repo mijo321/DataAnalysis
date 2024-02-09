@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import json
 import numpy as np
+import seaborn as sns
 
 with open('13931_20240207-132511.json') as f:
     data = json.load(f)
@@ -30,6 +31,8 @@ for i, (typer, verdi) in enumerate(zip(forskjelligeTyper, chunks)):
 ax1.set_xlabel('Tid')
 ax1.set_ylabel('co2')
 ax1.legend()
+
+sns.set_theme()
 
 
 totals = [sum(chunk) for chunk in chunks[1:]]  
